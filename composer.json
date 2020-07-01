@@ -23,14 +23,18 @@
     "autoload": {
         "psr-4": {
             "BruceBrophy\\LaravelBlog\\": "src"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
             "BruceBrophy\\LaravelBlog\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BruceBrophy\\LaravelBlog\\BlogServiceProvider"
+            ]
         }
     }
 }
