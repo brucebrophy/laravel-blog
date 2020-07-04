@@ -3,7 +3,7 @@
 namespace BruceBrophy\LaravelBlog;
 
 use Illuminate\Support\ServiceProvider;
-use BruceBrophy\LaravelBlog\Console\Commands\PublishViews;
+use BruceBrophy\LaravelBlog\Console\PublishViews;
 
 class BlogServiceProvider extends ServiceProvider
 {

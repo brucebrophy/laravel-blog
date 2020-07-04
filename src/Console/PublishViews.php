@@ -1,6 +1,6 @@
 <?php
 
-namespace BruceBrophy\LaravelBlog\Console\Commands;
+namespace BruceBrophy\LaravelBlog\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -25,5 +25,7 @@ class PublishViews extends Command
 	{
 		$uiLibrary = $this->option('ui');
 		$filesystem->copyDirectory(__DIR__.'/../../resources/views/' . $uiLibrary . '/blog', resource_path('views/vendor/laravel-blog'));
+
+		$this->info('Views have been published');
 	}
 }
