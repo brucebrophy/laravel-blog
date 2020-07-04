@@ -31,7 +31,10 @@ class BlogServiceProvider extends ServiceProvider
 
 	private function registerPackageRoutes()
 	{
-		Route::group(['prefix' => config('blog.routing.prefix')], function () {
+		Route::group([
+			'middleware' => 'web',
+			'prefix' => config('blog.routing.prefix'),
+		], function () {
 			$this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 		});
 	}
