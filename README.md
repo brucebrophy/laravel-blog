@@ -10,10 +10,8 @@ Add a blog to your Laravel Application
 
 Run the above command to publish migrations and config
 
-
-
 ### Publish Blog Views
-`$ php artisan blog:publish --ui={tailwind || bootstrap}`
+`$ php artisan blog:publish tailwind`
 
 ### Testing
 

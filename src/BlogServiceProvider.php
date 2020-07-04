@@ -24,6 +24,8 @@ class BlogServiceProvider extends ServiceProvider
 			__DIR__.'/../database/migrations/create_posts_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_posts_table.php'),
 		], 'migrations');
 
+		$this->loadViewsFrom( resource_path('views/vendor/laravel-blog'), 'laravel-blog');
+
 		$this->registerPackageRoutes();
 	}
 

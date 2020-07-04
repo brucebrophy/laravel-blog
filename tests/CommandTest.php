@@ -17,7 +17,7 @@ class CommandTest extends TestCase
 
 		$this->assertFalse(File::exists(resource_path('/views/vendor/laravel-blog')));
 
-		Artisan::call('blog:publish');
+		Artisan::call('blog:publish tailwind');
 
 		$this->assertSame('Views have been published'.PHP_EOL, Artisan::output());
 
