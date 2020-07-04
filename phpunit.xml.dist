@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Permissions Test Suite">
+        <testsuite name="Laravel Blog Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -20,6 +20,6 @@
         </whitelist>
     </filter>
     <php>
-        <env name="CACHE_DRIVER" value="array"/>
+        <env name="DB_CONNECTION" value="testing" />
     </php>
 </phpunit>
