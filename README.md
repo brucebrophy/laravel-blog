@@ -6,6 +6,12 @@ Add a blog to your Laravel Application
 
 `$ composer require brucebrophy/laravel-blog`
 
+`$ php artisan vendor:publish --provider='BruceBrophy\LaravelBlog\BlogServiceProvider'`
+
+Run the above command to publish migrations and config
+
+
+
 ### Publish Blog Views
 `$ php artisan blog:publish --ui={tailwind || bootstrap}`
 
