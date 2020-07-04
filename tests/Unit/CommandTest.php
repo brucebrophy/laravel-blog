@@ -1,9 +1,10 @@
 <?php
 
-namespace BruceBrophy\LaravelBlog\Test;
+namespace BruceBrophy\LaravelBlog\Tests\Unit;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
+use BruceBrophy\LaravelBlog\Tests\TestCase;
 
 class CommandTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BruceBrophy\LaravelBlog\Test;
+namespace BruceBrophy\LaravelBlog\Tests;
 
 use BruceBrophy\LaravelBlog\BlogServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
