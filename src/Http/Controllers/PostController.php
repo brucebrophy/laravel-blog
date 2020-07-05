@@ -9,7 +9,7 @@ class PostController
 {
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(10);
 		return view('laravel-blog::blog.posts.index', compact('posts'));
 	}
 
@@ -23,10 +23,12 @@ class PostController
 		$request->validate([
 			'title' => 'required|max:255',
 			'body' => 'required',
+			'published_at' => 'required',
 		]);
 
 		$post = new Post;
 		$post->fill($request->input());
+		$post->user_id = auth()->id();
 		$post->save();
 
 		return redirect()->route('posts.show', $post->id);

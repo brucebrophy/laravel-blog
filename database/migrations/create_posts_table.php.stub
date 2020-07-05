@@ -17,6 +17,8 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('body');
+            $table->foreignId('user_id');
+            $this->timestamp('published_at');
             $table->timestamps();
         });
     }
