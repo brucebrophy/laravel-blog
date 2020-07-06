@@ -2,8 +2,9 @@
 
 namespace BruceBrophy\LaravelBlog;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use BruceBrophy\LaravelBlog\Console\Commands\PublishViews;
+use BruceBrophy\LaravelBlog\Console\PublishViews;
 
 class BlogServiceProvider extends ServiceProvider
 {
@@ -22,5 +23,19 @@ class BlogServiceProvider extends ServiceProvider
 		$this->publishes([
 			__DIR__.'/../database/migrations/create_posts_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_posts_table.php'),
 		], 'migrations');
+
+		$this->loadViewsFrom( resource_path('views/vendor/laravel-blog'), 'laravel-blog');
+
+		$this->registerPackageRoutes();
+	}
+
+	private function registerPackageRoutes()
+	{
+		Route::group([
+			'middleware' => 'web',
+			'prefix' => config('blog.routing.prefix'),
+		], function () {
+			$this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+		});
 	}
 }

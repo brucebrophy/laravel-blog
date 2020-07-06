@@ -1,6 +1,6 @@
 <?php
 
-namespace BruceBrophy\LaravelBlog\Console\Commands;
+namespace BruceBrophy\LaravelBlog\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -12,7 +12,8 @@ class PublishViews extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'blog:publish {--ui=tailwind}';
+	protected $signature = 'blog:publish 
+					{ ui : The UI library (tailwind, bootstrap) }';
 
 	/**
 	 * The console command description.
@@ -21,9 +22,16 @@ class PublishViews extends Command
 	 */
 	protected $description = 'Publish blog view resources';
 
+
 	public function handle(Filesystem $filesystem)
 	{
-		$uiLibrary = $this->option('ui');
-		$filesystem->copyDirectory(__DIR__.'/../../resources/views/' . $uiLibrary . '/blog', resource_path('views/vendor/laravel-blog'));
+		if (! in_array($this->argument('ui'), ['tailwind', 'bootstrap'])) {
+			throw new \InvalidArgumentException('Invalid UI preset.');
+		}
+
+		$uiLibrary = $this->argument('ui');
+		$filesystem->copyDirectory(__DIR__.'/../../resources/views/' . $uiLibrary, resource_path('views/vendor/laravel-blog'));
+
+		$this->info('Views have been published');
 	}
 }

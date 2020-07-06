@@ -27,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BruceBrophy\\LaravelBlog\\Test\\": "tests"
+            "BruceBrophy\\LaravelBlog\\Tests\\": "tests"
         }
     },
     "extra": {
