@@ -7,17 +7,17 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
-	protected function getEnvironmentSetUp($app)
-	{
-		include_once __DIR__.'/../database/migrations/create_posts_table.php.stub';
+    protected function getEnvironmentSetUp($app)
+    {
+        include_once __DIR__.'/../database/migrations/create_posts_table.php.stub';
 
-		(new \CreatePostsTable)->up();
-	}
+        (new \CreatePostsTable)->up();
+    }
 
-	protected function getPackageProviders($app)
-	{
-		return [
-			BlogServiceProvider::class,
-		];
-	}
+    protected function getPackageProviders($app)
+    {
+        return [
+            BlogServiceProvider::class,
+        ];
+    }
 }
