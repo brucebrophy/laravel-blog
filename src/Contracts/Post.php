@@ -4,5 +4,5 @@ namespace BruceBrophy\LaravelBlog\Contracts;
 
 interface Post
 {
-	public function findBySlug();
+    public function findBySlug();
 }
