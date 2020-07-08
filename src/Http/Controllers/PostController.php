@@ -23,7 +23,7 @@ class PostController
 		$request->validate([
 			'title' => 'required|max:255',
 			'body' => 'required',
-			'published_at' => 'required',
+//			'published_at' => 'required',
 		]);
 
 		$post = new Post;

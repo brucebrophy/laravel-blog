@@ -15,6 +15,11 @@ class Post extends Model implements PostContract
 		'published_at'
 	];
 
+	public function user()
+	{
+		return $this->belongsTo(config('blog.user_model'));
+	}
+
 	public function findBySlug()
 	{
 		// TODO
