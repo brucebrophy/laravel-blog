@@ -1,6 +1,6 @@
 <?php
 
-namespace BruceBrophy\LaravelBlog\Tests\Unit;
+namespace BruceBrophy\LaravelBlog\Tests\Feature;
 
 use BruceBrophy\LaravelBlog\Tests\TestCase;
 
@@ -10,9 +10,9 @@ class PostTest extends TestCase
 	{
 		$response = $this->followingRedirects()
 			->post(route('posts.store'), [
-			'title' => 'hello',
-			'body' => 'world'
-		]);
+				'title' => 'hello',
+				'body' => 'world'
+			]);
 
 		$response->assertOk()
 			->assertViewHas('post')
